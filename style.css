@@ -1,0 +1,211 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: pretty;
+  }
+
+  /* .............custome css styles.............. */
+@font-face {
+    font-family: "Young Serif";
+    src: url("/assets/fonts/young-serif/YoungSerif-Regular.ttf") format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'outfit';
+    src: url("/assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+}
+  :root{
+/* ...... Colors..... */
+
+--clr-White: hsl(0, 0%, 100%);
+
+--clr-Stone_100: hsl(30, 54%, 90%);
+--clr-Stone_150: hsl(30, 18%, 87%);
+--clr-Stone_600: hsl(30, 10%, 34%);
+--clr-Stone_900: hsl(24, 5%, 18%);;
+
+--clr-Brown_800: hsl(14, 45%, 36%);
+
+--clr-Rose_800: hsl(332, 51%, 32%);
+--clr-Rose_50: hsl(330, 100%, 98%);
+
+/* ..............topography........... */
+
+--ff-primary: "young serif";
+--ff-secondary:'outfit';
+
+--fw-400: 400;
+--fw-600:600;
+--fw-700:700;
+
+--fs-l:2.2rem;
+--fs-m:1.75rem;
+--fs-s:1rem;
+  }
+
+  body{
+    background-color: var(--clr-Stone_100);
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-400);
+    color: var(--clr-Stone_600);
+    font-size: var(--fs-s);
+  }
+  .grid-wrapper{
+    display:grid;
+    background-color: var(--clr-White);
+    gap:2rem;
+  }
+  
+  .description-section{
+    display: grid;
+    gap:2rem;
+    padding-inline: 1.9rem;
+  }
+  .grid{
+    display: grid;
+    gap:1.5rem;
+  }
+
+
+  .grid[data-item="prep_time"]{
+    background-color: var(--clr-Rose_50);
+    gap:.5rem;
+    padding: 1.3rem 2rem;
+    border-radius: 1rem;
+  }
+
+  .grid[data-item="prep_time"] h3,li::marker{
+    color: var(--clr-Rose_800);
+  }
+
+  .grid[data-item="prep_time"] li{
+    padding-left: 1rem;
+    list-style-type: disc;
+  }
+  .grid[data-item="prep_time"] li p{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+
+  .grid h2{
+    font-family: var(--ff-primary);
+    color: var(--clr-Brown_800);
+    font-size: var(--fs-m);
+  }
+
+  .grid h1{
+    font-family: var(--ff-primary);
+    color: var(--clr-Stone_900);
+    line-height: 2.3rem;
+    font-size: var(--fs-l);
+  }
+  
+   li{
+    padding-block:.3rem;
+  }
+
+  span{
+    font-weight: var(--fw-600);
+  }
+
+ ul{
+    padding-left: 1.2rem;
+    list-style-type: square;
+  }
+  ol{
+    padding-left: 1.6rem;
+  }
+
+  .brown > li::marker{
+    color: var(--clr-Brown_800);
+    font-weight: var(--fw-600);
+    font-family: var(--ff-secondary);
+    
+  }
+
+  .brown li{
+    padding-left: 2rem;
+  }
+
+  .flex-group{
+    display: flex;
+    justify-content: space-between;
+    padding:0 5rem .5rem 2rem;
+  }
+  .flex-group[data-border="yes"]{
+    border-bottom: 1px solid var(--clr-Stone_150);;
+  }
+
+  .flex-group .value{
+    color: var(--clr-Brown_800);
+    font-weight: var(--fw-600);
+  }
+
+  .ingredient,.instruction{
+    border-bottom: 1px solid var(--clr-Stone_150);
+    padding-bottom: 1rem;
+  }
+
+@media screen and (min-width:600px) {
+    
+    body{
+        display: grid;
+        place-content: center;
+        margin-block: 2rem;
+    }
+    .grid-wrapper{
+        max-width: 700px;
+        padding-block:1.5rem;
+        border-radius: 2rem;
+    }
+
+    .grid-image{
+        border-radius: 1rem;
+        margin-inline: 1.5rem;
+        overflow: hidden;
+    }
+
+    .flex-group{
+        padding:0 16rem .7rem 2rem;
+      }
+    
+}
+  
